@@ -59,7 +59,7 @@ class BookContent {
 	    add_meta_box("publisher-meta-box", "Publisher", array($this, 'publisher_meta_box_markup'), "book", "side", "high", null);
 	}
 	
-	public function save_publisher_meta($post_id, $post) {
+	public function save_publisher_meta($post) {
 		
 		// Nonce must be verified and user must be allowed to edit for save/update to take place
 		if ( !wp_verify_nonce( $_POST['meta_noncename'], BOOK_CONTENT_FILE ) && $post->post_type === BookPostType::postType()) {
